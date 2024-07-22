@@ -11,14 +11,67 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous"
   />
+  <style>
+    h1{
+        text-align: center;
+        margin: 10px;
+    }
+    header{
+        background-color: antiquewhite;
+        width: 100%;
+        height: 70px;
+        box-shadow: 0 0 12px gray;
+        >ul{
+            height: 100%;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            >li{
+                margin-right: 24px;
+                >a{
+                    text-decoration: none;
+                    font-size: 25px;
+                    color: rgb(92, 69, 69);
+                    font-weight: 600;
+                    padding: 20px;
+                    transition: all 0.3s ease-in-out;
+                    &:hover{
+                        background-color: rgb(255, 215, 167);
+                    }
+                    &:active{
+                        background-color: rgb(253, 178, 79);
+                    }
+                }
+            }
+        }
+    }
+    table{
+        box-shadow: 0 0 12px rgb(179, 179, 179);
+        text-align: center;
+    }
+    .btn{
+        box-shadow: 0 0 3px rgb(173, 173, 173);
+    }
+  </style>
 </head>
 <body>
-    <h1>List Page</h1>
-    <a class="btn btn-success" href="/create">Create</a>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>No.</th>
+    <header>
+        <ul>
+            <li>
+                <a href="/list">List</a>
+            </li>
+            <li>
+                <a href="/create">Add product</a>
+            </li>
+        </ul>
+    </header>
+    <h1 class="">List Page</h1>
+    <table class="table table-striped table-bordered table-hover">
+        <thead >
+            <tr class="table-primary">
+                <!-- <th>No.</th> -->
                 <th>Name</th>
                 <th>Price</th>
                 <th>Image</th>
@@ -27,14 +80,14 @@
         </thead>
         <tbody>
             <% for(let p of pros) { %>
-                <tr>
-                    <td><%= p.id %></td>
+                <tr class="align-middle">
+                    <!-- <td><%= p.id %></td> -->
                     <td><%= p.name %></td>
                     <td><%= p.price %></td>
                     <td><img style="height: 100px;" src="images/<%=p.image%>" alt=""></td>
                     <td>
                         <a class="btn btn-warning" href="/edit/<%=p.id%>">Edit</a>
-                        <a href="" class="btn btn-danger">Delete</a>
+                        <a href="/delete/<%=p.id%>" class="btn btn-danger" onclick="return confirm('Confirm Delete?')">Delete</a>
                     </td>
                 </tr>
             <% } %>
