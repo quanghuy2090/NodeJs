@@ -12,6 +12,7 @@
     />
     <style>
       h1 {
+        color: rgb(93, 83, 69);
         text-align: center;
         margin: 10px;
       }
@@ -34,7 +35,7 @@
               font-size: 25px;
               color: rgb(92, 69, 69);
               font-weight: 600;
-              padding: 35px;
+              padding: 20px;
               transition: all 0.3s ease-in-out;
               &:hover {
                 background-color: rgb(255, 215, 167);
@@ -61,7 +62,7 @@
     <header>
       <ul>
         <li>
-          <a href="/">List</a>
+          <a href="/list">List</a>
         </li>
       </ul>
     </header>
@@ -78,6 +79,7 @@
           name="name"
           class="form-control m-2"
           value="<%=pros.name %>"
+          required
         />
       </div>
       <div>
@@ -87,11 +89,12 @@
           name="price"
           class="form-control m-2"
           value="<%=pros.price %>"
+          required
         />
       </div>
       <div>
         <label for="">Image</label>
-        <input type="file" name="image" class="form-control m-2" />
+        <input type="file" name="image" class="form-control m-2" required />
         <% if (pros.image) { %>
         <img src="/images/<%=pros.image%>" height="100px" alt="" />
         <% } %>

@@ -13,6 +13,7 @@
     />
     <style>
       h1 {
+        color: rgb(93, 83, 69);
         text-align: center;
         margin: 10px;
       }
@@ -35,7 +36,7 @@
               font-size: 25px;
               color: rgb(92, 69, 69);
               font-weight: 600;
-              padding: 30px;
+              padding: 20px;
               transition: all 0.3s ease-in-out;
               &:hover {
                 background-color: rgb(255, 215, 167);
@@ -62,7 +63,7 @@
     <header>
       <ul>
         <li>
-          <a href="/">List</a>
+          <a href="/list">List</a>
         </li>
       </ul>
     </header>
@@ -70,11 +71,29 @@
     <div class="container">
       <form class="" action="/save" method="Post" enctype="multipart/form-data">
         <label for="name" class="m-2">Name</label>
-        <input type="text" name="name" id="name" class="form-control m-2" />
+        <input
+          type="text"
+          name="name"
+          id="name"
+          class="form-control m-2"
+          
+        />
         <label for="price" class="m-2">Price</label>
-        <input type="number" name="price" id="price" class="form-control m-2" />
+        <input
+          type="number"
+          name="price"
+          id="price"
+          class="form-control m-2"
+          
+        />
         <label for="image" class="m-2">Image</label>
-        <input type="file" name="image" id="image" class="form-control m-2" />
+        <input
+          type="file"
+          name="image"
+          id="image"
+          class="form-control m-2"
+          
+        />
         <button
           type="submit"
           value="save"

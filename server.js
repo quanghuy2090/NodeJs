@@ -4,7 +4,6 @@ const express = require("express");
 const productController = require("./controllers/productController");
 const mongoose = require("mongoose");
 var multer = require("multer");
-var fs = require("fs");
 const app = new express();
 const port = 3000;
 
@@ -28,11 +27,11 @@ mongoose
   .connect("mongodb://localhost:27017/nodejs-db")
   .then((result) => {
     app.get("/list", productController.getList);
-    app.get("/create", productController.create);
+    app.get("/create",upload.single('image'), productController.create);
     app.get("/edit/:id", productController.getDetail);
     app.post("/save",upload.single('image'), productController.save);
-    app.put("/update/:id",upload.single('image'), productController.update);
-    app.delete("/delete/:id", productController.delete);
+    app.post("/update/:id",upload.single('image'), productController.update);
+    app.get("/delete/:id", productController.delete);
         app.listen(port, () => {
       console.log("Sv chay o port " + port);
     });
