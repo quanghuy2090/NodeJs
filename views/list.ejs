@@ -102,6 +102,8 @@
         <li>
           <a href="/list">List</a>
           <a href="/create">Add Product</a>
+          <a href="/admin">Admin</a>
+          <a href="/home">Home</a>
         </li>
       </ul>
     </header>
@@ -126,6 +128,7 @@
             <img style="height: 100px" src="images/<%=p.image%>" alt="" />
           </td>
           <td>
+            <a class="btn btn-info" href="/list/<%=p.id%>">Detail</a>
             <a class="btn btn-warning" href="/edit/<%=p.id%>">Edit</a>
             <a
               href="/delete/<%=p.id%>"
